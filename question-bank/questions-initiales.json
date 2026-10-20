@@ -1,0 +1,568 @@
+{
+  "bankId": "comtesse-academy-initial",
+  "bankVersion": 1,
+  "status": "draft",
+  "language": "fr",
+  "sourceDocument": "FORMATION NOUVO RECRUTEMENT.pptx",
+  "questionCount": 18,
+  "questions": [
+    {
+      "id": "M1-Q001",
+      "module": "module-1-identite",
+      "competency": "Histoire de l'entreprise",
+      "type": "single_choice",
+      "question": "En quelle année l’ILBB a-t-elle été créée selon le support ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1962"
+        },
+        {
+          "id": "B",
+          "text": "1972"
+        },
+        {
+          "id": "C",
+          "text": "1982"
+        },
+        {
+          "id": "D",
+          "text": "2012"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Le support situe la création de l’ILBB en 1972 par Antoine Sadeler.",
+      "criticalProposed": false,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Historique",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M1-Q002",
+      "module": "module-1-identite",
+      "competency": "Slogan de marque",
+      "type": "single_choice",
+      "question": "Quel est le slogan de la marque COMTESSE ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La qualité avant tout"
+        },
+        {
+          "id": "B",
+          "text": "Le plaisir de tous les jours"
+        },
+        {
+          "id": "C",
+          "text": "La fraîcheur à chaque instant"
+        },
+        {
+          "id": "D",
+          "text": "La tradition au quotidien"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Le slogan indiqué est « COMTESSE, le plaisir de tous les jours ».",
+      "criticalProposed": false,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Notre identité",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M1-Q003",
+      "module": "module-1-identite",
+      "competency": "Identité visuelle",
+      "type": "single_choice",
+      "question": "Selon le support, que symbolise principalement le bleu du logo COMTESSE ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "La modernité"
+        },
+        {
+          "id": "B",
+          "text": "La noblesse"
+        },
+        {
+          "id": "C",
+          "text": "La fraîcheur et la douceur"
+        },
+        {
+          "id": "D",
+          "text": "La performance commerciale"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Le support associe le bleu à la fraîcheur et à la douceur des produits.",
+      "criticalProposed": false,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Définition du logo",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M2-Q001",
+      "module": "module-2-produits",
+      "competency": "Références produit",
+      "type": "single_choice",
+      "question": "Quel produit est décrit dans le support comme une boisson lactée crémeuse et gourmande ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "COMTESSE YO BIO"
+        },
+        {
+          "id": "B",
+          "text": "COMTESSE SUCRÉ"
+        },
+        {
+          "id": "C",
+          "text": "COMTESSE NATURE"
+        },
+        {
+          "id": "D",
+          "text": "COMTESSE BÉBÉ"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "La description de YO BIO mentionne une boisson lactée crémeuse et gourmande.",
+      "criticalProposed": false,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Spécifications des produits / Bouteilles",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M2-Q002",
+      "module": "module-2-produits",
+      "competency": "Limites de connaissance",
+      "type": "single_choice",
+      "question": "Si un commercial ne peut pas répondre à une préoccupation du client sur un produit, que doit-il faire selon le support ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inventer une réponse plausible"
+        },
+        {
+          "id": "B",
+          "text": "Changer de sujet"
+        },
+        {
+          "id": "C",
+          "text": "Se référer à son responsable"
+        },
+        {
+          "id": "D",
+          "text": "Promettre une réponse sans suivi"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Le support indique que le commercial doit se référer à son responsable le cas échéant.",
+      "criticalProposed": false,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Les attitudes d’un bon commercial",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M2-Q003",
+      "module": "module-2-produits",
+      "competency": "Prix officiels",
+      "type": "single_choice",
+      "question": "Quelle source doit être consultée pour confirmer le prix applicable au moment de la vente ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Un ancien souvenir du commercial"
+        },
+        {
+          "id": "B",
+          "text": "La liste de prix officielle en vigueur"
+        },
+        {
+          "id": "C",
+          "text": "Le prix d’un concurrent"
+        },
+        {
+          "id": "D",
+          "text": "Une estimation personnelle"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Le cahier des charges prévoit l'utilisation de la liste de prix officielle à jour. Le PowerPoint ne suffit pas à confirmer les prix actuellement applicables.",
+      "criticalProposed": false,
+      "source": "Cahier des charges COMTESSE Academy v1.0 — validation métier requise",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M3-Q001",
+      "module": "module-3-vitrine",
+      "competency": "Chaîne du froid",
+      "type": "single_choice",
+      "question": "Quelle plage de température le support indique-t-il pour la conservation constante des produits ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "0 à 2 °C"
+        },
+        {
+          "id": "B",
+          "text": "4 à 6 °C"
+        },
+        {
+          "id": "C",
+          "text": "8 à 10 °C"
+        },
+        {
+          "id": "D",
+          "text": "10 à 12 °C"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Le support mentionne une température comprise entre 4 et 6 °C. Cette consigne doit être confirmée par le responsable compétent avant publication officielle.",
+      "criticalProposed": true,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Définition du logo / couleur bleue; confirmation métier requise",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M3-Q002",
+      "module": "module-3-vitrine",
+      "competency": "Produits non conformes",
+      "type": "single_choice",
+      "question": "Que faire des produits périmés ou avariés trouvés dans la vitrine ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Les placer derrière les produits conformes"
+        },
+        {
+          "id": "B",
+          "text": "Les mélanger aux nouvelles livraisons"
+        },
+        {
+          "id": "C",
+          "text": "Les isoler immédiatement des produits conformes"
+        },
+        {
+          "id": "D",
+          "text": "Les laisser en vitrine jusqu’au prochain passage"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Le support demande d'isoler immédiatement les articles avariés ou périmés pour éviter une remise en rayon accidentelle.",
+      "criticalProposed": true,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Gestion des vitrines sur le terrain; confirmation métier requise",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M3-Q003",
+      "module": "module-3-vitrine",
+      "competency": "Facing",
+      "type": "single_choice",
+      "question": "Quel ordre de facing est indiqué dans le support, du haut vers le bas ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Seaux, bidons, poches, pots"
+        },
+        {
+          "id": "B",
+          "text": "Pots, poches, bidons, seaux"
+        },
+        {
+          "id": "C",
+          "text": "Poches, pots, seaux, bidons"
+        },
+        {
+          "id": "D",
+          "text": "Bidons, seaux, pots, poches"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "L'ordre indiqué est : pots, poches, bidons, seaux.",
+      "criticalProposed": false,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Gestion des vitrines sur le terrain",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M4-Q001",
+      "module": "module-4-posture-commerciale",
+      "competency": "Écoute active",
+      "type": "single_choice",
+      "question": "Que signifie l’écoute active dans la relation client ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Parler davantage que le client"
+        },
+        {
+          "id": "B",
+          "text": "Comprendre le besoin, poser des questions ouvertes et reformuler"
+        },
+        {
+          "id": "C",
+          "text": "Présenter immédiatement toutes les références"
+        },
+        {
+          "id": "D",
+          "text": "Éviter les questions pour gagner du temps"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Le support insiste sur la compréhension, les questions ouvertes et la reformulation.",
+      "criticalProposed": false,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Les attitudes d’un bon commercial",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M4-Q002",
+      "module": "module-4-posture-commerciale",
+      "competency": "Gestion des objections",
+      "type": "single_choice",
+      "question": "Comment réagir face à une objection ou à un refus ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Insister jusqu’à obtenir un accord"
+        },
+        {
+          "id": "B",
+          "text": "Se fâcher pour défendre le produit"
+        },
+        {
+          "id": "C",
+          "text": "Garder son calme et répondre avec professionnalisme"
+        },
+        {
+          "id": "D",
+          "text": "Mettre fin à toute relation avec le client"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "Le support valorise la gestion des émotions et la persévérance sans insistance excessive.",
+      "criticalProposed": false,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Les attitudes d’un bon commercial",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M4-Q003",
+      "module": "module-4-posture-commerciale",
+      "competency": "Argumentation",
+      "type": "single_choice",
+      "question": "Comment adapter son argumentaire commercial ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Utiliser exactement le même discours pour tous"
+        },
+        {
+          "id": "B",
+          "text": "Mettre en avant les avantages pertinents selon le profil du client"
+        },
+        {
+          "id": "C",
+          "text": "Ne parler que du prix"
+        },
+        {
+          "id": "D",
+          "text": "Éviter de présenter les bénéfices du produit"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Le support demande d'adapter le discours au profil du client et de présenter les avantages du produit.",
+      "criticalProposed": false,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Les attitudes d’un bon commercial",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M5-Q001",
+      "module": "module-5-tournee",
+      "competency": "Contrôle des quantités",
+      "type": "single_choice",
+      "question": "Avant le départ en tournée, comment vérifier les quantités sorties de la chambre froide ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Se fier uniquement à la mémoire"
+        },
+        {
+          "id": "B",
+          "text": "Faire un double comptage avec le vendeur et comparer les quantités par référence"
+        },
+        {
+          "id": "C",
+          "text": "Vérifier uniquement le nombre total de glacières"
+        },
+        {
+          "id": "D",
+          "text": "Reporter le contrôle au retour"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Le support demande un double comptage avec le vendeur afin de vérifier les quantités par référence.",
+      "criticalProposed": true,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Les étapes d’une bonne tournée / Avant la tournée; confirmation métier requise",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M5-Q002",
+      "module": "module-5-tournee",
+      "competency": "Matériel de tournée",
+      "type": "single_choice",
+      "question": "Lequel de ces éléments figure parmi les outils à emporter en tournée ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Le carnet de bons de livraison"
+        },
+        {
+          "id": "B",
+          "text": "Un catalogue concurrent obligatoire"
+        },
+        {
+          "id": "C",
+          "text": "Un registre personnel sans rapport avec la tournée"
+        },
+        {
+          "id": "D",
+          "text": "Aucun document si le téléphone fonctionne"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Le support cite le carnet de BL, le téléphone, la FCRC et la calculatrice.",
+      "criticalProposed": false,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Les étapes d’une bonne tournée / Avant la tournée",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M5-Q003",
+      "module": "module-5-tournee",
+      "competency": "Validation des quantités",
+      "type": "single_choice",
+      "question": "Chez un client existant, comment valider les quantités à livrer ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Les décider seul sans informer le client"
+        },
+        {
+          "id": "B",
+          "text": "Les valider contradictoirement avec le client"
+        },
+        {
+          "id": "C",
+          "text": "Les reprendre automatiquement de la tournée précédente"
+        },
+        {
+          "id": "D",
+          "text": "Les confirmer uniquement par téléphone après le départ"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Le support prévoit de valider contradictoirement les quantités par référence avec le client.",
+      "criticalProposed": true,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Visite d’un ancien client; confirmation métier requise",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M6-Q001",
+      "module": "module-6-prospection-cloture",
+      "competency": "Création d’un nouveau client",
+      "type": "single_choice",
+      "question": "Quelle formalité est indiquée comme impérative avant de livrer un nouveau client ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Livrer puis créer le compte"
+        },
+        {
+          "id": "B",
+          "text": "Créer le nouveau client dans IBM après transmission des informations requises au responsable"
+        },
+        {
+          "id": "C",
+          "text": "Attendre la deuxième tournée"
+        },
+        {
+          "id": "D",
+          "text": "Créer le compte uniquement en cas de paiement différé"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Le support indique que le nouveau client doit être créé dans IBM avant toute livraison, après transmission des informations requises.",
+      "criticalProposed": true,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Visite d’un prospect; confirmation métier requise",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M6-Q002",
+      "module": "module-6-prospection-cloture",
+      "competency": "Encaissements",
+      "type": "single_choice",
+      "question": "Au retour de tournée, que faire des espèces et des chèques perçus ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Les conserver jusqu’au lendemain"
+        },
+        {
+          "id": "B",
+          "text": "Les remettre à la caisse et récupérer le reçu correspondant"
+        },
+        {
+          "id": "C",
+          "text": "Les déduire des retours sans justificatif"
+        },
+        {
+          "id": "D",
+          "text": "Les remettre à un autre commercial"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Le support demande de verser la totalité des espèces et chèques à la caisse et de récupérer le reçu.",
+      "criticalProposed": true,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Au retour de la tournée; confirmation métier requise",
+      "validationStatus": "proposed",
+      "version": 1
+    },
+    {
+      "id": "M6-Q003",
+      "module": "module-6-prospection-cloture",
+      "competency": "Documents de fin de tournée",
+      "type": "single_choice",
+      "question": "Quels documents doivent être déposés auprès du gestionnaire de compte au retour ?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Uniquement les notes personnelles"
+        },
+        {
+          "id": "B",
+          "text": "La FCRC et les bons de livraison"
+        },
+        {
+          "id": "C",
+          "text": "Uniquement les photos de la vitrine"
+        },
+        {
+          "id": "D",
+          "text": "Le planning de la semaine suivante seulement"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "Le support cite la fiche de compte rendu commercial (FCRC) et les bons de livraison (BL).",
+      "criticalProposed": false,
+      "source": "FORMATION NOUVO RECRUTEMENT.pptx — section Au retour de la tournée",
+      "validationStatus": "proposed",
+      "version": 1
+    }
+  ]
+}
