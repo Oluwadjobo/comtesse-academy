@@ -1,7 +1,35 @@
+
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy: {
+      '/auth': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true,
+      },
+      '/modules': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true,
+      },
+      '/admin': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true,
+      },
+      '/exams': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true,
+      },
+      '/learner': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true,
+      },
+      '/manager': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true,
+      },
+    },
+  },
 })

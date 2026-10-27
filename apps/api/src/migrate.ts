@@ -1,10 +1,16 @@
-﻿import "dotenv/config";
-import { readFile } from "node:fs/promises";
+﻿
+import "dotenv/config";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { db } from "../src/db.js";
+import { db } from "./db.js";
 
-const migrationName = "001_initial_schema.sql";
+const currentFile = fileURLToPath(import.meta.url);
+const currentDirectory = path.dirname(currentFile);
+const migrationsDirectory = path.resolve(
+  currentDirectory,
+  "../migrations",
+);
 
 if (!db) {
   console.error("DATABASE_URL absente. Vérifie le fichier .env local.");
@@ -13,8 +19,6 @@ if (!db) {
   const client = await db.connect();
 
   try {
-    await client.query("BEGIN");
-
     await client.query(`
       CREATE TABLE IF NOT EXISTS schema_migrations (
         name TEXT PRIMARY KEY,
@@ -22,38 +26,54 @@ if (!db) {
       )
     `);
 
-    const existing = await client.query(
-      "SELECT name FROM schema_migrations WHERE name = $1",
-      [migrationName],
-    );
+    const files = (await readdir(migrationsDirectory))
+      .filter((name) => /^\d{3}_[a-z0-9_-]+\.sql$/i.test(name))
+      .sort();
 
-    if (existing.rowCount && existing.rowCount > 0) {
-      console.log("Migration déjà appliquée :", migrationName);
-      await client.query("COMMIT");
-    } else {
-      const currentFile = fileURLToPath(import.meta.url);
-      const currentDirectory = path.dirname(currentFile);
-      const sqlPath = path.resolve(
-        currentDirectory,
-        "../migrations",
-        migrationName,
-      );
-      const sql = await readFile(sqlPath, "utf8");
+    for (const migrationName of files) {
+      await client.query("BEGIN");
 
-      await client.query(sql);
+      try {
+        const existing = await client.query(
+          "SELECT name FROM schema_migrations WHERE name = $1",
+          [migrationName],
+        );
 
-      await client.query(
-        "INSERT INTO schema_migrations (name) VALUES ($1)",
-        [migrationName],
-      );
+        if (existing.rowCount && existing.rowCount > 0) {
+          await client.query("COMMIT");
+          console.log("Migration déjà appliquée :", migrationName);
+          continue;
+        }
 
-      await client.query("COMMIT");
-      console.log("Migration appliquée avec succès :", migrationName);
+        const sqlPath = path.join(migrationsDirectory, migrationName);
+        const sql = await readFile(sqlPath, "utf8");
+
+        await client.query(sql);
+
+        await client.query(
+          "INSERT INTO schema_migrations (name) VALUES ($1)",
+          [migrationName],
+        );
+
+        await client.query("COMMIT");
+        console.log("Migration appliquée avec succès :", migrationName);
+      } catch (error) {
+        await client.query("ROLLBACK");
+        throw new Error(
+          `Échec de la migration ${migrationName} : ${
+            error instanceof Error ? error.message : "Erreur inconnue"
+          }`,
+        );
+      }
+    }
+
+    if (files.length === 0) {
+      console.log("Aucun fichier de migration SQL trouvé.");
     }
   } catch (error) {
-    await client.query("ROLLBACK");
-    console.error("Échec de la migration. Les changements ont été annulés.");
-    console.error(error instanceof Error ? error.message : "Erreur inconnue");
+    console.error(
+      error instanceof Error ? error.message : "Erreur inconnue",
+    );
     process.exitCode = 1;
   } finally {
     client.release();
