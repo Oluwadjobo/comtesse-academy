@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type { FormEvent } from "react";
 import "./App.css";
 import { getTrainingModule } from "./moduleContent";
+import UserManagement from "./UserManagement";
+import AudioLessonPlayer from "./AudioLessonPlayer";
 
 type Role = "learner" | "manager" | "admin";
 type User = { id: string; employeeCode: string; fullName: string; role: Role };
@@ -64,7 +66,7 @@ export default function App() {
   const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
   const [activeModule, setActiveModule] = useState<number | null>(null);
   const [checkAnswer, setCheckAnswer] = useState<number | null>(null);
-  const [view, setView] = useState<"dashboard" | "questions" | "exam">("dashboard");
+  const [view, setView] = useState<"dashboard" | "questions" | "exam" | "users">("dashboard");
   const [examSession, setExamSession] = useState<ExamSession | null>(null);
   const [examAnswers, setExamAnswers] = useState<Record<string, string[]>>({});
   const [examResult, setExamResult] = useState<ExamResult | null>(null);
@@ -314,6 +316,7 @@ export default function App() {
         <button className={`nav-item ${view === "dashboard" ? "selected" : ""}`} onClick={() => { setView("dashboard"); setActiveModule(null); setCheckAnswer(null); }}>▦ &nbsp; Tableau de bord</button>
         {user.role === "learner" && <button className={`nav-item ${view === "exam" ? "selected" : ""}`} onClick={() => { setView("exam"); setActiveModule(null); setNotice(""); }}>✓ &nbsp; Évaluation finale</button>}
         {isManager && <button className={`nav-item ${view === "questions" ? "selected" : ""}`} onClick={() => { setView("questions"); setActiveModule(null); }}>☷ &nbsp; Questions d'examen</button>}
+        {user.role === "admin" && <button className={`nav-item ${view === "users" ? "selected" : ""}`} onClick={() => { setView("users"); setActiveModule(null); setNotice(""); }}>♙ &nbsp; Gestion des comptes</button>}
         <div className="sidebar-bottom">
           <div className="help-card"><span className="help-icon">✦</span><strong>Besoin d'aide ?</strong><p>Votre responsable de formation peut vous accompagner.</p></div>
           <div className="sidebar-foot">COMTESSE · LE PLAISIR DE TOUS LES JOURS</div>
@@ -322,7 +325,7 @@ export default function App() {
 
       <main className="main-area">
         <header className="topbar">
-          <div className="breadcrumb">Formation <span>/</span> <strong>{view === "questions" ? "Questions d'examen" : view === "exam" ? "Évaluation finale" : selected ? selected.title : "Tableau de bord"}</strong></div>
+          <div className="breadcrumb">Formation <span>/</span> <strong>{view === "users" ? "Gestion des comptes" : view === "questions" ? "Questions d'examen" : view === "exam" ? "Évaluation finale" : selected ? selected.title : "Tableau de bord"}</strong></div>
           <div className="top-actions">
             <span className="status-dot" /><span className="status-text">Connecté</span>
             <div className="avatar">{user.fullName.split(/\s+/).map((x) => x[0]).slice(0, 2).join("").toUpperCase()}</div>
@@ -334,7 +337,9 @@ export default function App() {
         <div className="page-content">
           {notice && <div className="notice" role="status">{notice}<button onClick={() => setNotice("")} aria-label="Fermer">×</button></div>}
 
-          {view === "questions" && isManager ? (
+          {view === "users" && user.role === "admin" ? (
+            <UserManagement />
+          ) : view === "questions" && isManager ? (
             <section className="modules-section">
               <div className="section-heading">
                 <div><div className="eyebrow">ADMINISTRATION PÉDAGOGIQUE</div><h1>Questions d'examen</h1><p>Vérifiez le contenu avant de l'approuver. L'approbation ne publie pas automatiquement une question.</p></div>
@@ -490,6 +495,15 @@ export default function App() {
                       <section key={section.title} style={{ padding: 22, borderRadius: 16, border: "1px solid #e5e7eb", background: "#fff" }}>
                         <div className="eyebrow">SÉQUENCE {String(index + 1).padStart(2, "0")}</div>
                         <h3 style={{ margin: "8px 0 14px" }}>{section.title}</h3>
+                        <AudioLessonPlayer
+                          title={section.title}
+                          text={[
+                            ...(section.paragraphs ?? []),
+                            ...(section.bullets ?? []),
+                            ...(section.steps ?? []),
+                            ...(section.alert ? [section.alert] : []),
+                          ].join(". ")}
+                        />
                         {section.paragraphs?.map((paragraph, paragraphIndex) => <p key={`${section.title}-p-${paragraphIndex}`} style={{ lineHeight: 1.75 }}>{paragraph}</p>)}
                         {section.bullets && <ul style={{ paddingLeft: 22, lineHeight: 1.8 }}>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
                         {section.steps && <ol style={{ paddingLeft: 22, lineHeight: 1.8 }}>{section.steps.map((step) => <li key={step}>{step}</li>)}</ol>}

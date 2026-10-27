@@ -3,3 +3,78 @@
 .login-page{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:#f4f7fa;font-family:Inter,"Segoe UI",Arial,sans-serif}.login-brand{background:linear-gradient(145deg,#173653,#245b83);color:white;padding:8vh 8vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}.login-brand:after{content:"";position:absolute;width:450px;height:450px;border:1px solid #ffffff25;border-radius:50%;right:-180px;bottom:-160px;box-shadow:0 0 0 50px #ffffff08,0 0 0 100px #ffffff06}.crown{color:var(--gold);font-size:34px}.brand-name{font-weight:900;letter-spacing:3px;margin-top:14px}.brand-name span{display:block;font-size:10px;letter-spacing:6px;color:#c4d2de;margin-top:6px}.login-brand h1{font-size:clamp(28px,3vw,45px);line-height:1.2;margin:70px 0 14px;position:relative;z-index:1}.login-brand h1 em{font-family:Georgia,serif;color:#f5d36b;font-weight:400}.login-brand>p{font-size:14px;line-height:1.8;color:#d2e0e9;max-width:400px;position:relative;z-index:1}.login-foot{font-size:9px;letter-spacing:2px;color:#c6d5df;margin-top:60px}.login-card{background:white;align-self:center;justify-self:center;width:min(420px,calc(100% - 42px));padding:42px;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:flex;flex-direction:column}.login-card h2{font-size:28px;color:var(--navy);margin:12px 0 8px}.login-card>p{font-size:12px;color:var(--muted);line-height:1.7;margin:0 0 24px}.login-card label{font-size:11px;font-weight:800;color:#435466;margin:13px 0 7px}.login-card input{border:1px solid #dce4eb;border-radius:8px;padding:12px 13px;outline:none;font-size:12px}.login-card input:focus{border-color:#6593b5;box-shadow:0 0 0 3px #e7f1f8}.primary-button.full{width:100%;margin-top:23px;padding:14px}.login-card>small{font-size:10px;line-height:1.6;color:#96a2ad;margin-top:18px;text-align:center}
 @media(max-width:1050px){.sidebar{width:210px}.page-content{padding:28px 24px}.topbar{padding:0 24px}.module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-art{margin-right:0}.hero{padding:28px}.user-block{display:none}}
 @media(max-width:720px){.app-shell{display:block}.sidebar{width:auto;min-height:0;padding:12px 16px;display:block;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:0 4px 10px}.side-label,.sidebar-bottom,.sidebar .nav-item{display:none}.topbar{height:auto;min-height:65px;padding:12px 16px;gap:10px}.status-text{display:none}.top-actions{gap:7px}.logout{margin-left:0}.page-content{padding:22px 15px}.welcome-row h1{font-size:23px}.hero{padding:25px 22px;min-height:0}.hero h2{font-size:27px}.hero-art{display:none}.stats-grid{grid-template-columns:1fr;gap:10px;margin:14px 0 28px}.stat-card{padding:13px}.section-heading{align-items:stretch;flex-direction:column}.search-box{width:100%}.module-grid{grid-template-columns:1fr}.module-card{min-height:0}.page-footer{flex-wrap:wrap}.login-page{grid-template-columns:1fr}.login-brand{padding:32px 28px 24px}.login-brand h1{font-size:30px;margin:28px 0 10px}.login-foot{margin-top:25px}.login-card{margin:26px auto;padding:28px}.user-block{display:none}}
+
+/* Lecteur vocal des séquences de formation */
+.audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid #dce6d8;
+  border-radius: 12px;
+  background: #f5f8f2;
+}
+
+.audio-player-copy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.audio-player-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 50%;
+  background: #e1ecd9;
+  color: #365b32;
+  font-size: 24px;
+}
+
+.audio-player-copy strong,
+.audio-player-copy small {
+  display: block;
+}
+
+.audio-player-copy small {
+  margin-top: 4px;
+  color: #667085;
+}
+
+.audio-player-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.audio-player-actions .secondary-button {
+  padding: 10px 12px;
+}
+
+.audio-player-unavailable {
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff7e6;
+  color: #684d17;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .audio-player {
+    align-items: stretch;
+  }
+
+  .audio-player-actions {
+    width: 100%;
+  }
+
+  .audio-player-actions .secondary-button {
+    flex: 1 1 auto;
+  }
+}
