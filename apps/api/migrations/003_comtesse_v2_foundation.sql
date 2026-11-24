@@ -134,7 +134,6 @@ CREATE TABLE IF NOT EXISTS comtesse_v2.content_blocks (
   sort_order INTEGER NOT NULL CHECK (sort_order > 0),
   text_content TEXT,
   media_asset_id UUID REFERENCES comtesse_v2.media_assets(id) ON DELETE RESTRICT,
-  gallery_asset_ids UUID[] NOT NULL DEFAULT '{}',
   caption TEXT NOT NULL DEFAULT '',
   alt_text TEXT NOT NULL DEFAULT '',
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
@@ -142,8 +141,18 @@ CREATE TABLE IF NOT EXISTS comtesse_v2.content_blocks (
   CHECK (
     (block_type = 'text' AND text_content IS NOT NULL AND media_asset_id IS NULL)
     OR (block_type IN ('image', 'audio') AND media_asset_id IS NOT NULL AND text_content IS NULL)
-    OR (block_type = 'image_gallery' AND cardinality(gallery_asset_ids) > 0 AND media_asset_id IS NULL AND text_content IS NULL)
+    OR (block_type = 'image_gallery' AND media_asset_id IS NULL AND text_content IS NULL)
   )
+);
+
+CREATE TABLE IF NOT EXISTS comtesse_v2.content_block_gallery_items (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  content_block_id UUID NOT NULL REFERENCES comtesse_v2.content_blocks(id) ON DELETE RESTRICT,
+  media_asset_id UUID NOT NULL REFERENCES comtesse_v2.media_assets(id) ON DELETE RESTRICT,
+  sort_order INTEGER NOT NULL CHECK (sort_order > 0),
+  caption TEXT NOT NULL DEFAULT '',
+  UNIQUE (content_block_id, sort_order),
+  UNIQUE (content_block_id, media_asset_id)
 );
 
 CREATE TABLE IF NOT EXISTS comtesse_v2.assessment_versions (
